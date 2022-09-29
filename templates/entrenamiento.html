@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+
+{% block body %}
+
+<p>Analizando rostros, espere hasta que la pestaña haya desaparecido
+    Cuando haya desaparecido, podrá seguir escaneando rostros o crear el modelo</p>
+<form action="/legajo" method="post">
+    <label>Legajo del alumno:</label>
+    <input type="text" name="legajo" required>
+    <input type="submit" value="Enviar">
+</form>
+<form action="/modelo" method="post">
+    <label>Crear modelo</label>
+    <input type="submit" value="Crear">
+</form>
+{% endblock %}

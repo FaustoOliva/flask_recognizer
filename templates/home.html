@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+
+{% block body %}
+
+{{mensaje}}
+<form action="/legajo" method="post">
+    <label>Legajo del alumno:</label>
+    <input type="text" name="legajo" required>
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}
