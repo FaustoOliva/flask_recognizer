@@ -26,7 +26,7 @@ def reconocer():
     #face_recognizer.read('modeloLBPHFace.xml')   #3
 
     try:
-        cap = cv2.VideoCapture(1,cv2.CAP_DSHOW) #Captura video streaming. 0 => camara default
+        cap = cv2.VideoCapture(0,cv2.CAP_DSHOW) #Captura video streaming. 0 => camara default
         #cap = cv2.VideoCapture('Video.mp4')
     except:
         print('Falló conexion de camara.')

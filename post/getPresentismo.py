@@ -18,11 +18,13 @@ def modificar_presentismo(estado, bloque, tiempo,legajo):
     try:
         conection = getConnect()
         with conection.cursor() as cursor:
-            existe = cursor.execute(hd)
+            '''
+            existe = cursor.execute()
             print(existe)
             if(existe):
-                cursor.execute(XD)
-                print(cursor.rowcount, "Presentimso actualizado")
+            '''
+            cursor.execute(XD)
+            print(cursor.rowcount, "Presentimso actualizado")
 
         # display the PostgreSQL database server version
 

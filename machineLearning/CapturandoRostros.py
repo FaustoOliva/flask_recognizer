@@ -25,7 +25,7 @@ def capturando(legajo):
     #Lineas 5 - 11
     #Se crea y posiciona en la carpeta en donde se guardaran las inscripciones del video/stream que se realize 
     try:
-        cap = cv2.VideoCapture(1,cv2.CAP_DSHOW) #Captura video streaming. 0 => camara default
+        cap = cv2.VideoCapture(0,cv2.CAP_DSHOW) #Captura video streaming. 0 => camara default
         #cap = cv2.VideoCapture('Video.mp4')
     except:
         print('Falló conexion de camara.')
