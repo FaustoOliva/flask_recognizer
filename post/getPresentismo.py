@@ -1,19 +1,22 @@
 from .connectar import getConnect
+from datetime import datetime
+import pytz
 
-
-def modificar_presentismo(estado, bloque, tiempo,legajo):
+def modificar_presentismo(estado, bloque, tiempo,legajo, fecha):
     e = "'" + estado + "'"
     b = "'" + bloque + "'"
     t = "'" + tiempo + "'"
     l = "'" + legajo + "'"
-    print(e, b, t, l)
+    f = "'" + fecha + "'"
+   
+    print(e, b, t, l, f)
 
     hd = 'select * from api_presencia where api_cxmxpxa where api_presencia."IdCMPA" = api_cxmxpxa."IdCMPA" and "LegajoAlumno" = ' + \
         l + ' and api_cxmxpxa."BloqueDia" = ' + b
 
     XD = 'update api_presencia set "Estado" = ' + e + ' ,"Tiempo" = ' + t + \
-        ' from api_cxmxpxa where api_presencia."IdCMPA" = api_cxmxpxa."IdCMPA" and "LegajoAlumno" = ' + \
-        l + ' and api_cxmxpxa."BloqueDia" = ' + b
+        ' from api_cxmxpxa where api_presencia."IdClase" = api_clase."IdClase" and api_clase."IdCMPA" = api_cxmxpxa."IdCMPA" and "LegajoAlumno" = ' + \
+        l + ' and api_cxmxpxa."BloqueDia" = ' + b + 'and  api_cxmxpxa."Fecha" =' + f
 
     try:
         conection = getConnect()

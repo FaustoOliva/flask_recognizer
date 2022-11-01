@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 from post.getPresentismo import modificar_presentismo
 from utils.estado import pta as estado
-from utils.tiempo import bloque, time_BA as tiempo
+from utils.tiempo import bloque, time_BA as tiempo, date_BA as fecha
 
 
 def reconocer():
@@ -57,7 +57,7 @@ def reconocer():
                 cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
                 legajo = '{}'.format(imagePaths[result[0]])
 
-                p = modificar_presentismo(estado, bloque, tiempo, legajo)
+                p = modificar_presentismo(estado, bloque, tiempo, legajo, fecha)
                 
             else:
                 cv2.putText(frame,'Desconocido',(x,y-20),2,0.8,(0,0,255),1,cv2.LINE_AA)
