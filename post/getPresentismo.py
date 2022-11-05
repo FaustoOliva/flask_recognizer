@@ -11,12 +11,12 @@ def modificar_presentismo(estado, bloque, tiempo,legajo, fecha):
    
     print(e, b, t, l, f)
 
-    hd = 'select * from api_presencia where api_cxmxpxa where api_presencia."IdCMPA" = api_cxmxpxa."IdCMPA" and "LegajoAlumno" = ' + \
-        l + ' and api_cxmxpxa."BloqueDia" = ' + b
+    hd = 'select * from api_presencia, api_clase, api_cxmxpxa where api_presencia."IdClase" = api_clase."IdClase" and api_cxmxpxa."IdCMPA" = api_clase."IdCMPA" and "LegajoAlumno" = ' + \
+        l + ' and api_cxmxpxa."BloqueDia" = ' + b + ' and api_clase."Fecha" =' + f
 
     XD = 'update api_presencia set "Estado" = ' + e + ' ,"Tiempo" = ' + t + \
-        ' from api_cxmxpxa where api_presencia."IdClase" = api_clase."IdClase" and api_clase."IdCMPA" = api_cxmxpxa."IdCMPA" and "LegajoAlumno" = ' + \
-        l + ' and api_cxmxpxa."BloqueDia" = ' + b + 'and  api_cxmxpxa."Fecha" =' + f
+        ' from api_clase, api_cxmxpxa where api_presencia."IdClase" = api_clase."IdClase" and api_cxmxpxa."IdCMPA" = api_clase."IdCMPA" and "LegajoAlumno" = ' + \
+        l + ' and api_cxmxpxa."BloqueDia" = ' + b + ' and api_clase."Fecha" =' + f
 
     try:
         conection = getConnect()
